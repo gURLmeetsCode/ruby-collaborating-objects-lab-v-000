@@ -13,8 +13,15 @@ class Song
     song = Song.new(name)
     artist_name = filename.split("-")[0].rstrip
     song.artist = Artist.find_or_create_by_name(artist_name)
-    binding.pry
+    song.artist.add_song(song)
+    song
   end
 
+# so in this method we: parsed our file,
+# instantiated a new song, collaborated the artist to
+# the song (while saving the artist),
+# find or create by name keeps artist unique,
+# collaborated the song to the artist by adding it to the list of songs,
+# and returned the song object
 
 end
