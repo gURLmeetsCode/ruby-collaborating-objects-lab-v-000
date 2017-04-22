@@ -1,0 +1,26 @@
+require 'pry'
+
+class Song
+  attr_accessor :name, :songs, :artist
+
+  def initialize(name)
+    @name = name
+    @artist = artist
+  end
+
+  def self.new_by_filename(filename)
+    name = filename.split("-")[1].lstrip.rstrip
+    song = Song.new(name)
+    artist_name = filename.split("-")[0].rstrip
+    song.artist = Artist.find_or_create_by_name(artist_name)
+    binding.pry
+  end
+
+
+end
+
+
+# song.artist = filename.split(" - ")[0]
+#   Artist.find_or_create_by_name(song.artist)
+# # song.name = filename.split(" - ")[1]
+#   Artist.add_song(song.name)
