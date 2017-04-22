@@ -18,9 +18,3 @@ class Song
 
 
 end
-
-
-# song.artist = filename.split(" - ")[0]
-#   Artist.find_or_create_by_name(song.artist)
-# # song.name = filename.split(" - ")[1]
-#   Artist.add_song(song.name)
